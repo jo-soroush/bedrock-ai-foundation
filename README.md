@@ -26,7 +26,7 @@ This project demonstrates how to interact with Amazon Bedrock, AWS's fully manag
 
 Before you can run this project, you need:
 
-1. **Python 3.7 or higher** installed on your computer
+1. **Python 3.8 or higher** installed on your computer
 2. **An AWS account** with access to Amazon Bedrock
 3. **AWS credentials** configured with appropriate permissions
 4. **Access to Amazon Nova Micro model** in the `us-east-1` region
@@ -38,8 +38,8 @@ Follow these steps to set up and run the project on your local machine.
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd <repository-directory>
+git clone https://github.com/jo-soroush/bedrock-ai-foundation.git
+cd bedrock-ai-foundation
 ```
 
 ### Step 2: Create a Python Virtual Environment
@@ -49,13 +49,13 @@ A virtual environment keeps this project's dependencies separate from your syste
 **On macOS and Linux:**
 
 ```bash
-python3 -m venv venv
+python3 -m venv .venv
 ```
 
 **On Windows:**
 
 ```bash
-python -m venv venv
+python -m venv .venv
 ```
 
 ### Step 3: Activate the Virtual Environment
@@ -63,22 +63,22 @@ python -m venv venv
 **On macOS and Linux:**
 
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 **On Windows (Command Prompt):**
 
 ```bash
-venv\Scripts\activate.bat
+.venv\Scripts\activate.bat
 ```
 
 **On Windows (PowerShell):**
 
 ```bash
-venv\Scripts\Activate.ps1
+.venv\Scripts\Activate.ps1
 ```
 
-When activated, you should see `(venv)` at the beginning of your command prompt.
+When activated, you should see `(.venv)` at the beginning of your command prompt.
 
 ### Step 4: Install Dependencies
 
@@ -94,25 +94,13 @@ This installs `boto3`, the AWS SDK for Python.
 
 You must configure your AWS credentials to authenticate with Amazon Bedrock. **Never commit credentials to this repository.**
 
-**Option 1: AWS CLI (Recommended)**
-
-Install the AWS CLI and run:
+**Configure using AWS CLI:**
 
 ```bash
 aws configure
 ```
 
-This will prompt you for your AWS Access Key ID, Secret Access Key, region, and output format.
-
-**Option 2: Environment Variables**
-
-Set environment variables in your terminal session:
-
-```bash
-export AWS_ACCESS_KEY_ID=<your-access-key-id>
-export AWS_SECRET_ACCESS_KEY=<your-secret-access-key>
-export AWS_DEFAULT_REGION=us-east-1
-```
+Enter your AWS Access Key ID, Secret Access Key, default region (use `us-east-1`), and output format when prompted. This is the recommended approach for local development.
 
 ### Step 6: Run the Application
 
@@ -138,7 +126,7 @@ This simple script verifies that you can connect to Amazon Bedrock successfully.
 
 - Do not hardcode AWS access keys or secret keys in your code
 - Do not add credential files to the repository
-- The `.gitignore` file is configured to prevent common credential files from being committed
+- Use AWS CLI profiles or IAM roles to avoid storing credentials in files
 - Always use environment variables, AWS CLI configuration, or IAM roles for authentication
 
 ## Troubleshooting
