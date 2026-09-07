@@ -26,7 +26,7 @@ This project demonstrates how to interact with Amazon Bedrock, AWS's fully manag
 
 Before you can run this project, you need:
 
-1. **Python 3.8 or higher** installed on your computer
+1. **Python 3.10 or higher** installed on your computer
 2. **An AWS account** with access to Amazon Bedrock
 3. **AWS credentials** configured with appropriate permissions
 4. **Access to Amazon Nova Micro model** in the `us-east-1` region
