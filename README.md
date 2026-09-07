@@ -124,10 +124,7 @@ This simple script verifies that you can connect to Amazon Bedrock successfully.
 
 ⚠️ **NEVER commit AWS credentials to this repository or any version control system.**
 
-- Do not hardcode AWS access keys or secret keys in your code
-- Do not add credential files to the repository
-- Use AWS CLI profiles or IAM roles to avoid storing credentials in files
-- Always use environment variables, AWS CLI configuration, or IAM roles for authentication
+Always use AWS CLI configuration or IAM roles for authentication. Do not hardcode AWS access keys or secret keys in your code.
 
 ## Troubleshooting
 
